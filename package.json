@@ -1,5 +1,5 @@
 {
-	"name": "textarea-caret-position",
+	"name": "textarea-caret-typescript",
 	"version": "4.1.0",
 	"description": "Get the caret coordinates (top, left, height) of a textarea or input element in TypeScript",
 	"type": "module",
