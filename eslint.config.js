@@ -10,7 +10,7 @@ export default tseslint.config(
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: [...globals.browser, ...pluginJest.environments.globals.globals],
+      globals: {...globals.browser, ...pluginJest.environments.globals.globals},
     },
     rules: {
       "func-style": ["error", "expression", { allowArrowFunctions: true }],
