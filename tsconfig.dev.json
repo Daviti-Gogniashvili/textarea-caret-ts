@@ -1,0 +1,27 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "outDir": "./dist/dev",
+        "rootDir": "./src",
+        "declaration": false,
+        "declarationMap": false,
+        "sourceMap": true,
+        "inlineSourceMap": false,
+        "removeComments": false,
+        "noEmit": false,
+        "incremental": true,
+        "tsBuildInfoFile": "./dist/.tsbuildinfo"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "examples",
+        "docs"
+    ]
+}

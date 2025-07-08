@@ -1,0 +1,30 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "outDir": "./dist/esm",
+        "rootDir": "./src",
+        "declaration": false,
+        "declarationMap": false,
+        "sourceMap": true,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "verbatimModuleSyntax": false
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "src/**/*.test.ts",
+        "src/**/*.spec.ts",
+        "src/test-setup.ts",
+        "src/__tests__/**/*",
+        "node_modules",
+        "dist",
+        "examples",
+        "docs"
+    ]
+}

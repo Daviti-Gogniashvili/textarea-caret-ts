@@ -4,8 +4,8 @@
  * @license MIT
  */
 
-export type { CaretCoordinates, CaretOptions } from "./types";
-export { getCaretCoordinates } from "./textarea-caret-position";
+export type { CaretCoordinates, CaretOptions } from './types';
+export { getCaretCoordinates } from './textarea-caret-position';
 
 // Re-export for convenience
 export { getCaretCoordinates as default } from './textarea-caret-position';
