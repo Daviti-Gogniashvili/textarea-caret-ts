@@ -1,6 +1,6 @@
 {
 	"name": "textarea-caret-tsc",
-	"version": "4.1.1",
+	"version": "4.1.2",
 	"description": "Get the caret coordinates (top, left, height) of a textarea or input element in TypeScript",
 	"main": "dist/index.js",
 	"module": "dist/esm/index.js",
