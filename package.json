@@ -1,0 +1,100 @@
+{
+	"name": "textarea-caret-position",
+	"version": "4.0.0",
+	"description": "Get the caret coordinates (top, left, height) of a textarea or input element in TypeScript",
+	"main": "dist/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist/",
+		"src/",
+		"README.md",
+		"LICENSE",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"build": "node scripts/build.js",
+		"build:cjs": "tsc --project tsconfig.cjs.json",
+		"build:esm": "tsc --project tsconfig.esm.json && echo '{\"type\":\"module\"}' > dist/esm/package.json",
+		"build:types": "tsc --project tsconfig.types.json",
+		"clean": "rimraf dist coverage .tsbuildinfo",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage",
+		"test:browser": "playwright test",
+		"lint": "eslint src/**/*.ts",
+		"lint:fix": "eslint src/**/*.ts --fix",
+		"format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
+		"format:check": "prettier --check \"src/**/*.{ts,js,json,md}\"",
+		"typecheck": "tsc --noEmit",
+		"dev": "tsc --watch",
+		"prepublishOnly": "npm run clean && npm run build && npm run test && npm run lint",
+		"release": "node scripts/release.js",
+		"docs:build": "typedoc src/index.ts --out docs/api",
+		"examples:serve": "http-server examples -p 8080"
+	},
+	"keywords": [
+		"textarea",
+		"input",
+		"caret",
+		"cursor",
+		"position",
+		"coordinates",
+		"typescript",
+		"browser",
+		"dom",
+		"text-editor",
+		"autocomplete",
+		"mention",
+		"dropdown"
+	],
+	"author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/component/textarea-caret-position.git"
+	},
+	"bugs": {
+		"url": "https://github.com/component/textarea-caret-position/issues"
+	},
+	"homepage": "https://github.com/component/textarea-caret-position#readme",
+	"devDependencies": {
+		"@eslint/config-array": "^0.21.0",
+		"@eslint/js": "^9.30.1",
+		"@playwright/test": "^1.53.2",
+		"@types/jest": "^30.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.36.0",
+		"@typescript-eslint/parser": "^8.36.0",
+		"eslint": "^9.30.1",
+		"globals": "^16.3.0",
+		"http-server": "^14.1.1",
+		"jest": "^30.0.0-rc.1",
+		"jest-environment-jsdom": "^30.0.4",
+		"prettier": "^3.6.2",
+		"rimraf": "^6.0.1",
+		"ts-jest": "^29.4.0",
+		"typedoc": "^0.28.7",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.36.0"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead",
+		"not IE 11"
+	],
+	"publishConfig": {
+		"access": "public"
+	}
+}

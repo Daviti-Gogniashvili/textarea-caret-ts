@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Example - textarea-caret-position</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Basic Caret Position Example</h1>
+
+        <div class="example">
+            <h2>Textarea Example</h2>
+            <textarea id="textarea" placeholder="Type something here...">Hello World!
+This is a multiline
+textarea example.</textarea>
+            <div id="caret-info"></div>
+        </div>
+
+        <div class="example">
+            <h2>Input Example</h2>
+            <input type="text" id="input" placeholder="Type in this input..." value="Sample text">
+            <div id="input-caret-info"></div>
+        </div>
+
+        <div class="visual-demo">
+            <h2>Visual Demo</h2>
+            <div class="demo-container">
+                <textarea id="demo-textarea"
+                    placeholder="Click and type to see caret position...">Click anywhere in this text to see the caret position highlighted with a red dot.</textarea>
+                <div id="caret-indicator"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../dist/index.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
