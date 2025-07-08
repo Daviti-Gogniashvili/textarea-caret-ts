@@ -1,17 +1,16 @@
 {
 	"name": "textarea-caret-tsc",
-	"version": "4.1.0",
+	"version": "4.1.1",
 	"description": "Get the caret coordinates (top, left, height) of a textarea or input element in TypeScript",
+	"main": "dist/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/index.d.ts",
 	"type": "module",
-	"main": "./dist/cjs/index.js",
-	"module": "./dist/esm/index.js",
-	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
 			"import": "./dist/esm/index.js",
-			"require": "./dist/cjs/index.js",
-			"default": "./dist/esm/index.js"
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
 		},
 		"./package.json": "./package.json"
 	},
@@ -29,11 +28,9 @@
 		"build:types": "tsc --project tsconfig.types.json",
 		"build:dev": "tsc --project tsconfig.dev.json",
 		"clean": "rimraf dist coverage .tsbuildinfo",
-		"test": "NODE_OPTIONS='--loader=ts-node/esm' jest",
-		"test:watch": "NODE_OPTIONS='--loader=ts-node/esm' jest --watch",
-		"test:coverage": "NODE_OPTIONS='--loader=ts-node/esm' jest --coverage",
-		"test:browser": "playwright test",
-		"test:esm": "NODE_OPTIONS='--experimental-vm-modules' jest --preset=ts-jest/presets/default-esm",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage",
 		"lint": "eslint src/**/*.ts",
 		"lint:fix": "eslint src/**/*.ts --fix",
 		"format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
@@ -66,12 +63,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/component/textarea-caret-tsc.git"
+		"url": "git+https://github.com/component/textarea-caret-typescript.git"
 	},
 	"bugs": {
-		"url": "https://github.com/component/textarea-caret-tsc/issues"
+		"url": "https://github.com/component/textarea-caret-typescript/issues"
 	},
-	"homepage": "https://github.com/component/textarea-caret-tsc#readme",
+	"homepage": "https://github.com/component/textarea-caret-typescript#readme",
 	"devDependencies": {
 		"@eslint/config-array": "^0.21.0",
 		"@eslint/js": "^9.30.1",
