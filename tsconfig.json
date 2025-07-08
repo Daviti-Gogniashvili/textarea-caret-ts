@@ -50,7 +50,11 @@
         // Interop Constraints
         "verbatimModuleSyntax": false,
         "allowImportingTsExtensions": false,
-        "allowArbitraryExtensions": false
+        "allowArbitraryExtensions": false,
+        "types": [
+            "jest",
+            "node"
+        ]
     },
     "include": [
         "src/**/*.ts"
@@ -68,8 +72,4 @@
     "ts-node": {
         "esm": true
     },
-    "types": [
-        "jest",
-        "node"
-    ]
 }

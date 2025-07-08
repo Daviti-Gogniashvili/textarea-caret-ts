@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import pluginJest from 'eslint-plugin-jest';
 
 export default tseslint.config(
   { ignores: ["dist/", "node_modules/", "coverage/", "*.js", "docs/"] },
@@ -9,7 +10,7 @@ export default tseslint.config(
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: [...globals.browser, ...pluginJest.environments.globals.globals],
     },
     rules: {
       "func-style": ["error", "expression", { allowArrowFunctions: true }],

@@ -101,5 +101,8 @@
 	],
 	"publishConfig": {
 		"access": "public"
+	},
+	"dependencies": {
+		"eslint-plugin-jest": "^29.0.1"
 	}
 }

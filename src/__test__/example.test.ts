@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { getCaretCoordinates } from '../';
 import type { CaretCoordinates } from '../types';
 
