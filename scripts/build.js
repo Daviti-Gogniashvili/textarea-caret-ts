@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 
 const outputDir = path.join(__dirname, '../dist/esm');
 const outputFile = path.join(outputDir, 'package.json');
+const distPath = path.join(__dirname, '../dist');
 
 console.log('🚀 Building textarea-caret-typescript...');
 
@@ -35,15 +36,16 @@ const esmPackageJson = {
 };
 
 fs.mkdirSync(outputDir, { recursive: true });
-fs.writeFileSync(
-	outputFile,
-	JSON.stringify(esmPackageJson, null, 2)
-);
+fs.writeFileSync(outputFile, JSON.stringify(esmPackageJson, null, 2));
 
 console.log('✅ Build completed successfully!');
 
 // Verify build outputs
 const distFiles = fs.readdirSync(path.join(__dirname, '../dist'));
 console.log('📁 Generated files:', distFiles);
+
+// Verify that declaration files exist at the root
+const hasDeclarations = fs.existsSync(path.join(distPath, 'index.d.ts'));
+console.log('🔍 TypeScript declarations:', hasDeclarations ? '✅ Found' : '❌ Missing');
 
 console.log('\n🎉 Ready for publishing!');

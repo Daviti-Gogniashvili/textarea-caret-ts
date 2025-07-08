@@ -1,18 +1,31 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "target": "ES2020",
-        "module": "ESNext",
-        "moduleResolution": "bundler",
+        "target": "ES2022",
+        "module": "ES2022",
+        "moduleResolution": "node",
         "outDir": "./dist/esm",
         "rootDir": "./src",
-        "declaration": false,
-        "declarationMap": false,
+        "declaration": true,
+        "declarationMap": true,
+        // "declarationDir": "dist",
+        "strict": true,
         "sourceMap": true,
         "removeComments": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "verbatimModuleSyntax": false
+        "verbatimModuleSyntax": false,
+        "allowImportingTsExtensions": false,
+        "noEmitOnError": true,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "useUnknownInCatchVariables": true
     },
     "include": [
         "src/**/*.ts"

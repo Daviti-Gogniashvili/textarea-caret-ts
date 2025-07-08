@@ -1,16 +1,17 @@
 {
-	"name": "textarea-caret-typescript",
+	"name": "textarea-caret-position",
 	"version": "4.0.0",
 	"description": "Get the caret coordinates (top, left, height) of a textarea or input element in TypeScript",
-	"main": "dist/index.js",
-	"module": "dist/esm/index.js",
-	"types": "dist/index.d.ts",
 	"type": "module",
+	"main": "./dist/cjs/index.js",
+	"module": "./dist/esm/index.js",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/esm/index.js",
-			"require": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"require": "./dist/cjs/index.js",
+			"default": "./dist/esm/index.js"
 		},
 		"./package.json": "./package.json"
 	},
@@ -22,15 +23,17 @@
 		"CHANGELOG.md"
 	],
 	"scripts": {
-		"build": "node scripts.js",
+		"build": "node scripts/build.js",
 		"build:cjs": "tsc --project tsconfig.cjs.json",
 		"build:esm": "tsc --project tsconfig.esm.json",
 		"build:types": "tsc --project tsconfig.types.json",
 		"build:dev": "tsc --project tsconfig.dev.json",
 		"clean": "rimraf dist coverage .tsbuildinfo",
-		"test": "jest",
-		"test:watch": "jest --watch",
-		"test:coverage": "jest --coverage",
+		"test": "NODE_OPTIONS='--loader=ts-node/esm' jest",
+		"test:watch": "NODE_OPTIONS='--loader=ts-node/esm' jest --watch",
+		"test:coverage": "NODE_OPTIONS='--loader=ts-node/esm' jest --coverage",
+		"test:browser": "playwright test",
+		"test:esm": "NODE_OPTIONS='--experimental-vm-modules' jest --preset=ts-jest/presets/default-esm",
 		"lint": "eslint src/**/*.ts",
 		"lint:fix": "eslint src/**/*.ts --fix",
 		"format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
