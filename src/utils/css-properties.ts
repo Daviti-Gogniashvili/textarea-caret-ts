@@ -43,7 +43,7 @@ export const COPIED_PROPERTIES: readonly string[] = [
 ] as const;
 
 /** ID used for the mirror div element */
-export const MIRROR_DIV_ID = 'input-textarea-caret-typescript-mirror-div';
+export const MIRROR_DIV_ID = 'input-textarea-caret-tsc-mirror-div';
 
 /** Non-breaking space character used for input elements */
 export const NON_BREAKING_SPACE = '\u00a0';

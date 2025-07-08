@@ -40,7 +40,7 @@ describe('getCaretCoordinates', () => {
 
 	it('should not throw in debug mode and retain mirror div', () => {
 		const coords = getCaretCoordinates(textarea, 0, { debug: true });
-		const mirror = document.getElementById('input-textarea-caret-typescript-mirror-div');
+		const mirror = document.getElementById('input-textarea-caret-tsc-mirror-div');
 		expect(coords).toBeDefined();
 		expect(mirror).not.toBeNull();
 		mirror?.remove();

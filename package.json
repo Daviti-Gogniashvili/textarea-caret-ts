@@ -1,5 +1,5 @@
 {
-	"name": "textarea-caret-typescript",
+	"name": "textarea-caret-tsc",
 	"version": "4.1.0",
 	"description": "Get the caret coordinates (top, left, height) of a textarea or input element in TypeScript",
 	"type": "module",
@@ -66,12 +66,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/component/textarea-caret-typescript.git"
+		"url": "git+https://github.com/component/textarea-caret-tsc.git"
 	},
 	"bugs": {
-		"url": "https://github.com/component/textarea-caret-typescript/issues"
+		"url": "https://github.com/component/textarea-caret-tsc/issues"
 	},
-	"homepage": "https://github.com/component/textarea-caret-typescript#readme",
+	"homepage": "https://github.com/component/textarea-caret-tsc#readme",
 	"devDependencies": {
 		"@eslint/config-array": "^0.21.0",
 		"@eslint/js": "^9.30.1",

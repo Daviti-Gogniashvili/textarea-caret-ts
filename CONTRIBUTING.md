@@ -1,4 +1,4 @@
-# Contributing to textarea-caret-typescript
+# Contributing to textarea-caret-tsc
 
 Thank you for your interest in contributing! This document provides guidelines for contributing to this project.
 
