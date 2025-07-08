@@ -1,54 +1,81 @@
+import js from "@eslint/js";
+import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
+  { ignores: ["dist/", "node_modules/", "coverage/", "*.js", "docs/"] },
   {
-    root: true,
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
       ecmaVersion: 2020,
-      sourceType: "module",
-      project: "./tsconfig.json",
-    },
-    plugins: ["@typescript-eslint"],
-    extends: [
-      "eslint:recommended",
-      "@typescript-eslint/recommended",
-      "@typescript-eslint/recommended-requiring-type-checking",
-    ],
-    env: {
-      browser: true,
-      es6: true,
-      node: true,
-      jest: true,
+      globals: globals.browser,
     },
     rules: {
-      // TypeScript specific rules
-      "@typescript-eslint/no-unused-vars": [
+      "prefer-arrow/prefer-arrow-functions": [
         "error",
-        { argsIgnorePattern: "^_" },
+        {
+          disallowPrototype: true,
+          singleReturnOnly: false,
+          classPropertiesAllowed: false,
+        },
       ],
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "@typescript-eslint/no-non-null-assertion": "warn",
-      "@typescript-eslint/prefer-const": "error",
-      "@typescript-eslint/no-inferrable-types": "error",
-
-      // General rules
+      "prefer-arrow-callback": ["error", { allowNamedFunctions: true }],
+      "func-style": ["error", "expression", { allowArrowFunctions: true }],
+      "no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+      "no-undef": "error",
       "no-console": "warn",
       "no-debugger": "error",
-      "prefer-const": "error",
+      "no-alert": "warn",
       "no-var": "error",
-      "object-shorthand": "error",
-      "prefer-arrow-callback": "error",
-      "prefer-template": "error",
+      "no-shadow": "error",
+      "prefer-const": "error",
       eqeqeq: ["error", "always"],
       curly: ["error", "all"],
-      "brace-style": ["error", "1tbs"],
-      "comma-dangle": ["error", "never"],
-      quotes: ["error", "single", { avoidEscape: true }],
       semi: ["error", "always"],
+      quotes: ["error", "single"],
+      indent: ["error", "tab"],
+      "no-multi-spaces": "error",
+      "space-before-blocks": ["error", "always"],
+      "space-infix-ops": "error",
+      "keyword-spacing": ["error", { before: true, after: true }],
+      "brace-style": ["error", "1tbs", { allowSingleLine: true }],
+      "comma-dangle": ["error", "never"],
+      "comma-spacing": ["error", { before: false, after: true }],
+      "comma-style": ["error", "last"],
+      "key-spacing": ["error", { beforeColon: false, afterColon: true }],
+      "no-trailing-spaces": "error",
+      "eol-last": ["error", "always"],
+      "arrow-spacing": ["error", { before: true, after: true }],
+      "no-dupe-keys": "error",
+      "no-unreachable": "error",
+      "valid-typeof": "error",
+      "no-extra-boolean-cast": "error",
+      "no-irregular-whitespace": "error",
+      "no-unexpected-multiline": "error",
+      "use-isnan": "error",
+      "dot-notation": "error",
     },
   },
-  { ignores: ["dist/", "node_modules/", "coverage/", "*.js", "docs/"] },
 );
