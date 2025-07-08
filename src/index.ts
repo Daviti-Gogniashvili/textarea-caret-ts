@@ -5,7 +5,7 @@
  */
 
 export type { CaretCoordinates, CaretOptions } from './types';
-export { getCaretCoordinates } from './textarea-caret-position';
+export { getCaretCoordinates } from './textarea-caret-typescript';
 
 // Re-export for convenience
-export { getCaretCoordinates as default } from './textarea-caret-position';
+export { getCaretCoordinates as default } from './textarea-caret-typescript';

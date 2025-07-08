@@ -31,7 +31,7 @@ export const getCaretCoordinates = (
 ): CaretCoordinates => {
 	if (!isBrowser) {
 		throw new Error(
-			'textarea-caret-position#getCaretCoordinates should only be called in a browser'
+			'textarea-caret-typescript#getCaretCoordinates should only be called in a browser'
 		);
 	}
 

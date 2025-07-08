@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const outputDir = path.join(__dirname, '../dist/esm');
 const outputFile = path.join(outputDir, 'package.json');
 
-console.log('🚀 Building textarea-caret-position...');
+console.log('🚀 Building textarea-caret-typescript...');
 
 // Clean dist directory
 console.log('🧹 Cleaning dist directory...');
